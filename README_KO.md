@@ -3,17 +3,27 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Fork-Opencode_Port-orange.svg" alt="Fork">
+  <img src="https://img.shields.io/badge/Changed-Agent_Team→Parallel_Tasks-red.svg" alt="Architecture Change">
+</p>
+
+> ⚠️ **Opencode 포팅**: 이 저장소는 [revfactory/harness](https://github.com/revfactory/harness)의 Opencode 포팅 버전입니다.
+> - **아키텍처**: Agent Teams → Parallel Tasks
+> - **호환성**: Opencode 전용 (Claude Code와 호환 불가)
+> - 변경사항은 [CHANGES.md](CHANGES.md)를 참고하세요.
+
+<p align="center">
   <img src="https://img.shields.io/badge/Version-1.0.1-brightgreen.svg" alt="Version">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
-  <img src="https://img.shields.io/badge/Claude_Code-Plugin-purple.svg" alt="Claude Code Plugin">
+  <img src="https://img.shields.io/badge/Opencode-Skill-blue.svg" alt="Opencode Skill">
   <img src="https://img.shields.io/badge/Patterns-6_Architectures-orange.svg" alt="6 Architecture Patterns">
-  <img src="https://img.shields.io/badge/Mode-Agent_Teams-green.svg" alt="Agent Teams">
+  <img src="https://img.shields.io/badge/Mode-Parallel_Tasks-orange.svg" alt="Parallel Tasks">
   <a href="https://github.com/revfactory/harness/stargazers"><img src="https://img.shields.io/github/stars/revfactory/harness?style=social" alt="GitHub Stars"></a>
 </p>
 
 # Harness
 
-**Agent Team & Skill Architect** — Claude Code 플러그인
+**Agent Team & Skill Architect** — Opencode 스킬
 
 [English](README.md) | **한국어** | [日本語](README_JA.md)
 
