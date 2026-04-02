@@ -8,7 +8,7 @@ description: "하네스를 구성합니다. 전문 에이전트를 정의하며,
 도메인/프로젝트에 맞는 하네스를 구성하고, 각 에이전트의 역할을 정의하며, 에이전트가 사용할 스킬을 생성하는 메타 스킬.
 
 **핵심 원칙:**
-1. 에이전트 정의(.opencode/agents/ 또는 ~/.config/opencode/agents/)와 스킬(.opencode/skills/ 또는 ~/.config/opencode/skills/)을 생성한다.
+1. 에이전트 정의(.opencode/agents/)와 스킬(.opencode/skills/)을 생성한다.
 2. **Task tool을 사용한 병렬/순차 호출을 기본 실행 모드로 사용한다.**
 3. Claude 호환 경로(.claude/, ~/.claude/)도 지원한다.
 
