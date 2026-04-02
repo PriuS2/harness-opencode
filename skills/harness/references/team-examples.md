@@ -36,11 +36,13 @@ Phase 1: 준비
   - 사용자 입력 분석 (주제, 조사 모드 파악)
   - _workspace/ 생성
 
+> **모델 설정:** `model` 파라미터는 `provider/model` 형식으로 지정합니다. 사용자의 OpenCode 설정(config)에서 구성된 모델을 사용합니다. 예: `anthropic/claude-sonnet-4-20250514`, `openrouter/minimax/minimax-m2.7` 등
+
 Phase 2: 병렬 조사 실행
-  Task({ name: "official", prompt: "공식 채널 조사...", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
-  Task({ name: "media", prompt: "미디어/투자 동향 조사...", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
-  Task({ name: "community", prompt: "커뮤니티 반응 조사...", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
-  Task({ name: "background", prompt: "배경/경쟁 환경 조사...", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
+  Task({ name: "official", prompt: "공식 채널 조사...", model: "{provider/model}", run_in_background: true })
+  Task({ name: "media", prompt: "미디어/투자 동향 조사...", model: "{provider/model}", run_in_background: true })
+  Task({ name: "community", prompt: "커뮤니티 반응 조사...", model: "{provider/model}", run_in_background: true })
+  Task({ name: "background", prompt: "배경/경쟁 환경 조사...", model: "{provider/model}", run_in_background: true })
 
 Phase 3: 결과 취합
   - 4개 산출물 Read

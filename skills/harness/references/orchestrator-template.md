@@ -37,11 +37,13 @@ description: "{도메인} 워크플로우를 조율하는 오케스트레이터.
 
 ### Phase 2: 병렬 Task 실행
 
+> **모델 설정:** `model` 파라미터는 `provider/model` 형식으로 지정합니다. 사용자의 OpenCode 설정(config)에서 구성된 모델을 사용합니다. 예: `anthropic/claude-sonnet-4-20250514`, `openrouter/minimax/minimax-m2.7` 등
+
 모든 Task를 동시에 호출:
 
-Task({ name: "agent-1", prompt: "{역할 설명 및 작업 지시}", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
-Task({ name: "agent-2", prompt: "{역할 설명 및 작업 지시}", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
-Task({ name: "agent-3", prompt: "{역할 설명 및 작업 지시}", model: "openrouter/minimax/minimax-m2.7", run_in_background: true })
+Task({ name: "agent-1", prompt: "{역할 설명 및 작업 지시}", model: "{provider/model}", run_in_background: true })
+Task({ name: "agent-2", prompt: "{역할 설명 및 작업 지시}", model: "{provider/model}", run_in_background: true })
+Task({ name: "agent-3", prompt: "{역할 설명 및 작업 지시}", model: "{provider/model}", run_in_background: true })
 
 
 모든 Task 완료 대기 → 결과 취합
@@ -142,13 +144,13 @@ description: "{도메인} 워크플로우를 조율하는 오케스트레이터.
 이전 Task의 결과를 다음 Task 입력으로 전달:
 
 
-Phase 2-1: Task({ name: "agent-1", prompt: "{역할 설명}", model: "openrouter/minimax/minimax-m2.7" })
+Phase 2-1: Task({ name: "agent-1", prompt: "{역할 설명}", model: "{provider/model}" })
 → 결과: _workspace/01_agent-1.md
 
-Phase 2-2: Task({ name: "agent-2", prompt: "{역할 설명}. 입력: _workspace/01_agent-1.md 참고", model: "openrouter/minimax/minimax-m2.7" })
+Phase 2-2: Task({ name: "agent-2", prompt: "{역할 설명}. 입력: _workspace/01_agent-1.md 참고", model: "{provider/model}" })
 → 결과: _workspace/02_agent-2.md
 
-Phase 2-3: Task({ name: "agent-3", prompt: "{역할 설명}. 입력: _workspace/02_agent-2.md 참고", model: "openrouter/minimax/minimax-m2.7" })
+Phase 2-3: Task({ name: "agent-3", prompt: "{역할 설명}. 입력: _workspace/02_agent-2.md 참고", model: "{provider/model}" })
 → 결과: _workspace/03_agent-3.md
 
 

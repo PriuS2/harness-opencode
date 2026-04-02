@@ -127,7 +127,7 @@
 Task({
   name: "explore",
   prompt: "코드베이스를 탐색해줘",
-  model: "openrouter/minimax/minimax-m2.7",
+  model: "{provider/model}",
   tools: { edit: false, write: false }
 })
 
@@ -170,7 +170,7 @@ Task tool의 name 파라미터로 에이전트 타입을 지정한다.
 
 **원칙:** 모든 에이전트는 반드시 .opencode/agents/{name}.md 파일로 정의한다. 빌트인 타입이라도 에이전트 정의 파일을 생성하여 역할·원칙을 명시한다. 파일로 존재해야 다음 세션에서 재사용 가능하다.
 
-**모델:** 모든 에이전트는 model: "openrouter/minimax/minimax-m2.7"을 사용한다. Task tool 호출 시 반드시 model 파라미터를 명시한다.
+**모델 설정:** `model` 파라미터는 `provider/model` 형식으로 지정합니다. 사용자의 OpenCode 설정(config)에서 구성된 모델을 사용합니다. 예: `anthropic/claude-sonnet-4-20250514`, `openrouter/minimax/minimax-m2.7` 등
 
 ## 에이전트 정의: Markdown vs JSON
 

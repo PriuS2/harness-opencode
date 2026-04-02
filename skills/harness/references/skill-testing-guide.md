@@ -78,15 +78,17 @@
 
 각 테스트 프롬프트에 대해 두 개의 Task를 **동시에** 실행한다:
 
+> **모델 설정:** `model` 파라미터는 `provider/model` 형식으로 지정합니다. 사용자의 OpenCode 설정(config)에서 구성된 모델을 사용합니다. 예: `anthropic/claude-sonnet-4-20250514`, `openrouter/minimax/minimax-m2.7` 등
+
 **With-skill 실행:**
 
-Task({ name: "general", prompt: "{테스트 프롬프트}", model: "openrouter/minimax/minimax-m2.7", skill: "{스킬 이름}" })
+Task({ name: "general", prompt: "{테스트 프롬프트}", model: "{provider/model}", skill: "{스킬 이름}" })
 출력 경로: _workspace/iteration-N/eval-{id}/with_skill/outputs/
 
 
 **Baseline 실행:**
 
-Task({ name: "general", prompt: "{테스트 프롬프트}", model: "openrouter/minimax/minimax-m2.7" })
+Task({ name: "general", prompt: "{테스트 프롬프트}", model: "{provider/model}" })
 출력 경로: _workspace/iteration-N/eval-{id}/without_skill/outputs/
 
 
